@@ -1,0 +1,58 @@
+<style>
+    .section{
+        overflow: hidden;
+    }
+    label.title, input{
+        overflow: hidden;
+    }
+    .content{
+        transition: max-height 0.3s;
+        overflow: hidden;
+        max-height: 0;
+    }
+
+    input[type=checkbox]{
+        display: none;
+
+    }
+
+    input[type=checkbox]:checked ~ .content {
+        transition: max-height 3s;
+        max-height: 100%;
+    }
+    .triangle{
+        display: inline-block;
+        transition: transform 0.3s;
+    }
+    input[type=checkbox] ~ label .triangle {
+        transform: rotateZ(0deg);
+    }
+    input[type=checkbox]:checked ~ label .triangle {
+        transform: rotateZ(90deg);
+    }
+
+</style>
+<div>
+    <div class="section">
+        <input id="cb1" class="cb" type="checkbox" checked>
+        <label for="cb1" class="title">
+            <div class="triangle">&#9654;</div>
+            Title 1
+        </label>
+        <hr>
+        <div class="content">
+            Content 1
+        </div>
+    </div>
+    <div class="section">
+        <input id="cb2" class="cb" type="checkbox" checked>
+        <label for="cb2" class="title">
+            <div class="triangle">&#9654;</div>
+            Title 2
+        </label>
+        <hr>
+        <div class="content">
+            Content 2
+        </div>
+    </div>
+</div>
